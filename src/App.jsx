@@ -10,10 +10,11 @@ import BirthdaySurprise from './components/BirthdaySurprise/BirthdaySurprise';
 import FinalPage from './components/FinalPage/FinalPage';
 import BackgroundEffects from './components/BackgroundEffects/BackgroundEffects';
 import './App.css';
-
+import { Analytics } from '@vercel/analytics/react';
 function App() {
   return (
     <main className="app-main">
+      <Analytics />
       {/* Dynamic Animated Cosmos & Glow Background */}
       <BackgroundEffects />
 
