@@ -1,0 +1,468 @@
+/* ==========================================================================
+   Two Months Section Styles
+   Warm, Nostalgic, Friendship-Focused Story Introduction
+   ========================================================================== */
+
+.two-months-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5rem 1.5rem 4.5rem;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Section Ambient Gradient Backdrop to soften and warm the blue */
+.section-ambient-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 30%,
+    rgba(29, 78, 216, 0.18) 0%,
+    rgba(14, 30, 75, 0.25) 45%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Central Content Column */
+.two-months-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 880px;
+  width: 100%;
+  margin: auto;
+  gap: 1.5rem;
+}
+
+/* Step 1: Small Intro Badge */
+.intro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.25rem;
+  border-radius: 9999px;
+  background: rgba(15, 32, 77, 0.55);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #bae6fd;
+  box-shadow: 0 4px 20px rgba(8, 20, 50, 0.45), inset 0 0 14px rgba(96, 165, 250, 0.18);
+}
+
+.sparkle-icon {
+  color: #93c5fd;
+  font-size: 0.8rem;
+  filter: drop-shadow(0 0 5px #93c5fd);
+}
+
+/* Step 2: Main Heading ("Only 2 Months.") */
+.heading-wrapper {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.two-months-title {
+  font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem 0.85rem;
+}
+
+.title-prefix {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: #e0f2fe;
+  letter-spacing: -0.01em;
+  opacity: 0.95;
+}
+
+.title-highlight {
+  font-family: var(--font-script);
+  font-size: clamp(3.6rem, 9.5vw, 6.4rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 10%, #bae6fd 50%, #60a5fa 90%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 25px rgba(96, 165, 250, 0.4));
+  padding-left: 0.2rem;
+}
+
+/* Step 3, 4, 5: Narrative Text Sequence */
+.narrative-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  max-width: 620px;
+}
+
+.narrative-line {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.short-line {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-weight: 500;
+  color: #93c5fd;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pause-line {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2.6vw, 1.45rem);
+  font-style: italic;
+  color: #bae6fd;
+  opacity: 0.85;
+}
+
+.reveal-line {
+  font-size: clamp(1.2rem, 3.2vw, 1.65rem);
+  font-weight: 400;
+  color: #f0f9ff;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 18px rgba(147, 197, 253, 0.35);
+  margin-top: 0.2rem;
+}
+
+/* Step 6: Memory / Statistics Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.1rem;
+  width: 100%;
+  max-width: 860px;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem 1rem;
+  border-radius: 18px;
+  background: rgba(13, 26, 62, 0.48);
+  border: 1px solid rgba(147, 197, 253, 0.22);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 30px rgba(4, 12, 32, 0.5), inset 0 0 16px rgba(59, 130, 246, 0.12);
+  cursor: default;
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+.stat-card-featured {
+  background: rgba(20, 42, 95, 0.55);
+  border-color: rgba(186, 230, 253, 0.4);
+  box-shadow: 0 8px 30px rgba(6, 16, 45, 0.6), 0 0 20px rgba(96, 165, 250, 0.25);
+}
+
+.stat-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.25);
+  border: 1px solid rgba(147, 197, 253, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.stat-icon {
+  font-size: 1.35rem;
+}
+
+.stat-value {
+  font-family: var(--font-sans);
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.35rem 0;
+  text-shadow: 0 0 12px rgba(147, 197, 253, 0.4);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #93c5fd;
+  line-height: 1.35;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.card-shimmer-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(186, 230, 253, 0.5), transparent);
+}
+
+/* Step 7: Artistic Friendship Timeline */
+.timeline-container {
+  width: 100%;
+  max-width: 780px;
+  margin-top: 0.75rem;
+  padding: 1.25rem 1rem;
+}
+
+.timeline-track {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.timeline-line-glow {
+  position: absolute;
+  top: 13px;
+  left: 5%;
+  width: 90%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.2) 0%,
+    rgba(147, 197, 253, 0.8) 50%,
+    rgba(59, 130, 246, 0.2) 100%
+  );
+  box-shadow: 0 0 10px rgba(147, 197, 253, 0.6);
+  transform-origin: left;
+  z-index: 1;
+}
+
+.timeline-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+}
+
+.node-dot-wrapper {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.node-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 0 12px rgba(147, 197, 253, 0.8);
+  position: relative;
+  z-index: 2;
+}
+
+.node-pulse-ring {
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: rgba(96, 165, 250, 0.35);
+  animation: nodePulse 2.8s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes nodePulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+}
+
+.node-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.node-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e0f2fe;
+}
+
+.node-subtitle {
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: #93c5fd;
+  opacity: 0.8;
+  max-width: 120px;
+}
+
+/* Step 8: Main Emotional Quote */
+.quote-container {
+  position: relative;
+  margin-top: 1rem;
+  padding: 1.1rem 2rem;
+  max-width: 660px;
+  background: rgba(15, 28, 68, 0.38);
+  border: 1px solid rgba(147, 197, 253, 0.18);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 6px 24px rgba(4, 10, 28, 0.4);
+}
+
+.quote-mark {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: #60a5fa;
+  line-height: 0;
+  vertical-align: -0.4em;
+  opacity: 0.6;
+}
+
+.quote-text {
+  display: inline;
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #e0f2fe;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 15px rgba(147, 197, 253, 0.25);
+  margin: 0 0.4rem;
+}
+
+/* Step 9: Bottom Scroll Cue ("There's more... ↓") */
+.next-scroll-cue {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.cue-inner {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.cue-text {
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  color: #93c5fd;
+  text-shadow: 0 0 10px rgba(147, 197, 253, 0.4);
+}
+
+.cue-arrow {
+  font-size: 1rem;
+  color: #bae6fd;
+  filter: drop-shadow(0 0 6px rgba(96, 165, 250, 0.6));
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 820px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 600px) {
+  .two-months-section {
+    padding: 4rem 1.15rem 3.5rem;
+    min-height: auto;
+  }
+
+  .two-months-content {
+    gap: 1.2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    gap: 0.75rem;
+  }
+
+  .stat-card {
+    padding: 1.1rem 1rem;
+  }
+
+  .timeline-track {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1.5rem;
+    gap: 1.2rem;
+  }
+
+  .timeline-line-glow {
+    top: 5%;
+    left: 21px;
+    width: 2px;
+    height: 90%;
+    transform-origin: top;
+  }
+
+  .timeline-node {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .node-info {
+    text-align: left;
+  }
+
+  .node-dot-wrapper {
+    margin-bottom: 0;
+  }
+
+  .quote-container {
+    padding: 1rem 1.25rem;
+  }
+}

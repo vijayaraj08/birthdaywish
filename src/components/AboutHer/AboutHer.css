@@ -1,0 +1,732 @@
+/* ==========================================================================
+   About Her Section Styles
+   Modern, Dreamy, Content-Driven & Interactive Personality Showcase
+   ========================================================================== */
+
+.about-her-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 6.5rem 1.5rem 5.5rem;
+  background: linear-gradient(180deg, rgba(2, 5, 18, 1) 0%, rgba(6, 14, 38, 0.95) 50%, rgba(3, 7, 20, 1) 100%);
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Ambient Deep Blue Lighting & Glow */
+.about-her-ambient-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 25%,
+    rgba(37, 99, 235, 0.18) 0%,
+    rgba(14, 30, 80, 0.1) 50%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Abstract Floating Geometric Shapes */
+.abstract-shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(50px);
+}
+
+.shape-orb-1 {
+  width: 380px;
+  height: 380px;
+  top: 15%;
+  left: -8%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+}
+
+.shape-orb-2 {
+  width: 420px;
+  height: 420px;
+  bottom: 20%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.22) 0%, transparent 70%);
+}
+
+.shape-ring-1 {
+  width: 300px;
+  height: 300px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(147, 197, 253, 0.08);
+  filter: blur(2px);
+}
+
+.about-her-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1020px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.8rem;
+}
+
+/* ==========================================================================
+   1. Section Header & Stepped Dialogue
+   ========================================================================== */
+.about-her-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.1rem;
+  max-width: 780px;
+}
+
+.chapter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 9999px;
+  background: rgba(18, 36, 85, 0.65);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  backdrop-filter: blur(12px);
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #bae6fd;
+}
+
+.chapter-sparkle {
+  color: #93c5fd;
+  font-size: 0.75rem;
+}
+
+.dialogue-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dialogue-step {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.step-1 {
+  font-size: 1.05rem;
+  color: #93c5fd;
+  font-weight: 400;
+}
+
+.step-2 {
+  font-size: 1.1rem;
+  color: #bae6fd;
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.step-3 {
+  font-size: 1.25rem;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.about-her-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 6.2vw, 4.2rem);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 25%, #bae6fd 65%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 35px rgba(96, 165, 250, 0.4);
+  margin: 0.2rem 0;
+}
+
+.script-you {
+  font-family: var(--font-script);
+  font-size: clamp(3.2rem, 8.5vw, 5.8rem);
+  font-weight: 700;
+  -webkit-text-fill-color: #ffffff;
+  filter: drop-shadow(0 0 16px rgba(96, 165, 250, 0.8));
+  display: inline-block;
+  padding-left: 0.2rem;
+}
+
+.intro-exposé-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+}
+
+.expose-lead {
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
+  font-weight: 300;
+  color: #e0f2fe;
+  margin: 0;
+}
+
+.expose-middle {
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: #bae6fd;
+  margin: 0;
+}
+
+.expose-punch {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-weight: 500;
+  color: #93c5fd;
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   2. Personality Cards Grid (Pure Abstract & Glassmorphism)
+   ========================================================================== */
+.personality-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.personality-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(16, 34, 82, 0.52) 0%, rgba(8, 18, 48, 0.65) 100%);
+  border: 1px solid rgba(147, 197, 253, 0.24);
+  border-radius: 20px;
+  padding: 1.8rem 1.6rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 32px rgba(2, 6, 20, 0.5), inset 0 0 18px rgba(59, 130, 246, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  overflow: hidden;
+  cursor: default;
+  transition: all 0.35s ease;
+}
+
+.card-glow-backdrop {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  filter: blur(35px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card-top-row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(37, 99, 235, 0.28);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(2, 6, 20, 0.4);
+}
+
+.card-icon {
+  font-size: 1.5rem;
+}
+
+.card-tag-pill {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #bae6fd;
+  background: rgba(15, 30, 75, 0.6);
+  border: 1px solid rgba(147, 197, 253, 0.22);
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+}
+
+.card-trait-title {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.card-trait-desc {
+  position: relative;
+  z-index: 2;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.card-bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.4), transparent);
+}
+
+/* ==========================================================================
+   3. Interactive Reveal Card
+   ========================================================================== */
+.secret-reveal-section {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  justify-content: center;
+}
+
+.secret-card {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(20, 42, 98, 0.6) 0%, rgba(10, 22, 58, 0.75) 100%);
+  border: 1px solid rgba(186, 230, 253, 0.35);
+  border-radius: 22px;
+  padding: 2.2rem 2rem;
+  text-align: center;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 14px 40px rgba(2, 6, 20, 0.7), 0 0 25px rgba(59, 130, 246, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.secret-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.secret-sparkle-icon {
+  font-size: 1.3rem;
+  filter: drop-shadow(0 0 8px #93c5fd);
+}
+
+.secret-prompt {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  color: #bae6fd;
+  margin: 0;
+}
+
+.reveal-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 2.2rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.75), rgba(59, 130, 246, 0.5));
+  border: 1px solid rgba(186, 230, 253, 0.5);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 8px 24px rgba(4, 12, 35, 0.5);
+  transition: all 0.3s ease;
+}
+
+.btn-arrow-right {
+  font-size: 1.1rem;
+  color: #bae6fd;
+}
+
+.revealed-content-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.2rem 1rem;
+  background: rgba(10, 25, 65, 0.5);
+  border: 1px solid rgba(147, 197, 253, 0.25);
+  border-radius: 16px;
+  width: 100%;
+}
+
+.revealed-text-main {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.6vw, 1.45rem);
+  line-height: 1.5;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 0 15px rgba(147, 197, 253, 0.35);
+}
+
+.revealed-text-sub {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #93c5fd;
+  margin: 0;
+}
+
+/* ==========================================================================
+   4. Playful "Things I've Learned" Section
+   ========================================================================== */
+.learned-section {
+  width: 100%;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.learned-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.learned-badge-icon {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.5));
+}
+
+.learned-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.35rem, 3.4vw, 1.95rem);
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.learned-subtitle {
+  font-size: 0.95rem;
+  color: #93c5fd;
+  font-style: italic;
+  margin: 0;
+}
+
+.learned-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 100%;
+}
+
+.learned-item-pill {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1.1rem 1.4rem;
+  background: rgba(14, 30, 75, 0.5);
+  border: 1px solid rgba(147, 197, 253, 0.2);
+  border-left: 3px solid #60a5fa;
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.learned-num-badge {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.25);
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+}
+
+.learned-text {
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  font-weight: 400;
+  color: #e0f2fe;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   5. Official Friendship Analysis Rating Panel
+   ========================================================================== */
+.analysis-section {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  justify-content: center;
+}
+
+.analysis-card {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(15, 32, 80, 0.6) 0%, rgba(8, 18, 48, 0.75) 100%);
+  border: 1px solid rgba(186, 230, 253, 0.3);
+  border-radius: 22px;
+  padding: 2rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 14px 40px rgba(2, 6, 20, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.analysis-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(147, 197, 253, 0.2);
+  padding-bottom: 1rem;
+}
+
+.analysis-icon {
+  font-size: 1.4rem;
+}
+
+.analysis-title {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.analysis-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #86efac;
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(134, 239, 172, 0.35);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+}
+
+.meters-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.meter-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.meter-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.meter-label {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #e0f2fe;
+}
+
+.meter-value {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #93c5fd;
+}
+
+.meter-note {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #fca5a5;
+  font-style: italic;
+}
+
+.meter-bar-track {
+  position: relative;
+  width: 100%;
+  height: 9px;
+  background: rgba(3, 10, 30, 0.7);
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid rgba(147, 197, 253, 0.15);
+}
+
+.meter-bar-fill {
+  position: relative;
+  height: 100%;
+  border-radius: 9999px;
+}
+
+.meter-glow-head {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ffffff;
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   6. Main Cinematic Quote
+   ========================================================================== */
+.about-her-quote-section {
+  width: 100%;
+  max-width: 720px;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.quote-cinematic-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 2.2rem 1.8rem;
+  background: rgba(14, 28, 68, 0.45);
+  border: 1px solid rgba(147, 197, 253, 0.22);
+  border-radius: 22px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 35px rgba(2, 6, 20, 0.5);
+}
+
+.quote-stagger-line {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.line-a, .line-b {
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  font-weight: 300;
+  color: #93c5fd;
+}
+
+.line-c, .line-d {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.6vw, 1.4rem);
+  color: #bae6fd;
+}
+
+.quote-climax-line {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 3.6vw, 2.1rem);
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 25px rgba(147, 197, 253, 0.45);
+  margin: 0.5rem 0 0;
+}
+
+/* ==========================================================================
+   7. Section Transition at Bottom
+   ========================================================================== */
+.about-her-footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 680px;
+}
+
+.footer-compliment-line {
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  color: #93c5fd;
+  margin: 0;
+}
+
+.footer-not-done-line {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.6vw, 1.35rem);
+  color: #bae6fd;
+  margin: 0;
+}
+
+.footer-still-want-line {
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  font-weight: 400;
+  color: #e0f2fe;
+  margin: 0.2rem 0 1.2rem;
+}
+
+.continue-cue-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2.2rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.65), rgba(15, 30, 75, 0.8));
+  border: 1px solid rgba(186, 230, 253, 0.45);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(4, 12, 32, 0.5);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.continue-btn-text {
+  letter-spacing: 0.04em;
+}
+
+.continue-arrow {
+  font-size: 1.15rem;
+  color: #bae6fd;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 768px) {
+  .about-her-section {
+    padding: 4.5rem 1.2rem 3.5rem;
+  }
+
+  .personality-grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+  }
+
+  .analysis-card {
+    padding: 1.5rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .personality-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .secret-card {
+    padding: 1.6rem 1.2rem;
+  }
+
+  .learned-item-pill {
+    padding: 0.9rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .quote-cinematic-wrapper {
+    padding: 1.6rem 1.2rem;
+  }
+}

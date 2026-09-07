@@ -1,0 +1,593 @@
+/* ==========================================================================
+   Letter Section Styles
+   Digital Handwritten Parchment Letter in a Dreamy Blue Atmosphere
+   ========================================================================== */
+
+.letter-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 7.5rem 1.5rem 6.5rem;
+  background: linear-gradient(180deg, rgba(2, 6, 22, 1) 0%, rgba(4, 10, 32, 0.98) 50%, rgba(2, 5, 18, 1) 100%);
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Ambient Blue Deep Cosmic Glow & Quiet Night Sky */
+.letter-ambient-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgba(37, 99, 235, 0.18) 0%,
+    rgba(14, 30, 80, 0.1) 50%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.letter-night-stars {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(186, 230, 253, 0.08) 1.2px, transparent 1.2px);
+  background-size: 34px 34px;
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.letter-container {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.5rem;
+}
+
+/* ==========================================================================
+   1. Entrance & Quiet Beacon
+   ========================================================================== */
+.letter-entrance-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.1rem;
+  max-width: 680px;
+}
+
+.quiet-beacon-orb {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.2rem;
+}
+
+.beacon-core {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 14px #60a5fa;
+}
+
+.beacon-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(96, 165, 250, 0.35);
+  animation: beaconPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes beaconPulse {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  50% { transform: scale(2.2); opacity: 0.1; }
+  100% { transform: scale(0.8); opacity: 0.8; }
+}
+
+.entrance-quiet-lead {
+  font-size: 1.15rem;
+  color: #93c5fd;
+  font-weight: 400;
+  margin: 0;
+}
+
+.entrance-serious-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 6.2vw, 3.8rem);
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 20%, #bae6fd 60%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 35px rgba(96, 165, 250, 0.45);
+  margin: 0;
+}
+
+.entrance-rule-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.2rem;
+}
+
+.rule-item {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  color: #bae6fd;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.entrance-final-cue {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+.entrance-scroll-down {
+  margin-top: 0.8rem;
+  color: #93c5fd;
+  font-size: 1.25rem;
+  filter: drop-shadow(0 0 8px #60a5fa);
+}
+
+/* ==========================================================================
+   2. Digital Handwritten Letter Paper
+   ========================================================================== */
+.letter-paper-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  transform: rotate(0.8deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.letter-paper-wrapper:hover {
+  transform: rotate(0deg);
+}
+
+.letter-wax-seal {
+  position: absolute;
+  top: -18px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  border: 2px solid rgba(186, 230, 253, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5), 0 0 15px rgba(96, 165, 250, 0.5);
+  z-index: 10;
+}
+
+.letter-parchment-sheet {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #fdfbf7 0%, #f7f4ed 100%);
+  border: 1px solid rgba(186, 230, 253, 0.4);
+  border-radius: 20px;
+  padding: 3.5rem 3rem;
+  box-shadow: 
+    0 24px 70px rgba(0, 0, 0, 0.75),
+    0 0 45px rgba(59, 130, 246, 0.28),
+    inset 0 0 35px rgba(220, 235, 252, 0.35);
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  line-height: 1.75;
+  overflow: hidden;
+}
+
+/* Faint Stationery Lines Background */
+.letter-parchment-sheet::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 31px,
+    rgba(203, 213, 225, 0.25) 31px,
+    rgba(203, 213, 225, 0.25) 32px
+  );
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.letter-header {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0.5rem;
+}
+
+.letter-salutation {
+  font-family: var(--font-script);
+  font-size: clamp(2.4rem, 6.5vw, 3.6rem);
+  font-weight: 700;
+  color: #1d4ed8;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(37, 99, 235, 0.15);
+}
+
+.letter-body-flow {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.letter-paragraph {
+  font-size: clamp(1.02rem, 2.2vw, 1.16rem);
+  font-weight: 400;
+  color: #334155;
+}
+
+.letter-paragraph p {
+  margin: 0;
+}
+
+.intro-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.intro-lead-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #1e40af;
+}
+
+.intro-pause-text {
+  font-style: italic;
+  color: #64748b;
+}
+
+.intro-climax-text {
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.lines-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.flow-line {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Special Highlight Moment inside the letter
+   ========================================================================== */
+.letter-highlight-moment {
+  position: relative;
+  z-index: 2;
+  margin: 1.2rem 0;
+  padding: 1.6rem 1.8rem;
+  background: linear-gradient(135deg, rgba(238, 246, 255, 0.85) 0%, rgba(224, 242, 254, 0.7) 100%);
+  border: 1px solid rgba(147, 197, 253, 0.6);
+  border-left: 4px solid #2563eb;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.08);
+}
+
+.highlight-lead {
+  display: block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  color: #1e40af;
+  margin-bottom: 0.4rem;
+}
+
+.highlight-climax {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 5.5vw, 3rem);
+  font-weight: 700;
+  color: #1d4ed8;
+  line-height: 1.25;
+  margin: 0;
+  text-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+}
+
+.highlight-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  margin: 0.75rem auto 0;
+}
+
+/* Appreciations list */
+.appreciations-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.apprec-intro {
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.apprec-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.apprec-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.apprec-bullet {
+  color: #2563eb;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Birthday wishes block */
+.birthday-wishes-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wishes-lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.wishes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-left: 0.8rem;
+  border-left: 2px solid rgba(147, 197, 253, 0.6);
+}
+
+.wish-line {
+  margin: 0;
+}
+
+/* Closing */
+.closing-paragraph {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.closing-signoff {
+  font-family: var(--font-script);
+  font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+  font-weight: 700;
+  color: #1d4ed8;
+  margin: 0;
+}
+
+.closing-thank-you {
+  font-size: 1.05rem;
+  color: #475569;
+  font-style: italic;
+}
+
+.sheet-watermark {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(147, 197, 253, 0.5);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   3. Handwritten P.S. Note
+   ========================================================================== */
+.postscript-note-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  background: #fffef5;
+  border: 1px solid rgba(250, 204, 21, 0.4);
+  border-radius: 12px;
+  padding: 1.6rem 2rem;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6), 0 0 15px rgba(250, 204, 21, 0.15);
+  color: #1e293b;
+  cursor: default;
+  transition: transform 0.3s ease;
+}
+
+.ps-washi-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 20px;
+  background: rgba(254, 240, 138, 0.6);
+  border: 1px dashed rgba(234, 179, 8, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.ps-card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ps-heading {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #d97706;
+  margin: 0;
+}
+
+.ps-lines-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ps-line {
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: #334155;
+  margin: 0;
+}
+
+.ps-signature {
+  font-family: var(--font-script);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  margin: 0.4rem 0 0;
+  text-align: right;
+}
+
+/* ==========================================================================
+   4. Letter Finale & Transition to Page 8
+   ========================================================================== */
+.letter-finale-section {
+  width: 100%;
+  max-width: 640px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.finale-dialogue {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.finale-step-1 { font-size: 1.05rem; color: #93c5fd; margin: 0; }
+.finale-step-2 { font-size: 1.1rem; color: #bae6fd; font-family: var(--font-serif); font-style: italic; margin: 0; }
+.finale-step-3 { font-size: 1.05rem; color: #93c5fd; margin: 0; }
+.finale-step-4 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 3.4vw, 2rem);
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(147, 197, 253, 0.45);
+  margin: 0.3rem 0 0;
+}
+
+.finale-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.next-thing-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.1rem 2.8rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.85), rgba(15, 30, 80, 0.95));
+  border: 1.5px solid rgba(186, 230, 253, 0.6);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  outline: none;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 35px rgba(4, 12, 35, 0.65), 0 0 30px rgba(59, 130, 246, 0.4);
+  transition: all 0.35s ease;
+}
+
+.btn-spark-left {
+  font-size: 1.2rem;
+  color: #fef08a;
+  filter: drop-shadow(0 0 8px #fef08a);
+}
+
+.btn-arrow-right {
+  font-size: 1.25rem;
+  color: #bae6fd;
+}
+
+.finale-button-hint {
+  font-size: 0.88rem;
+  color: #93c5fd;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 768px) {
+  .letter-section {
+    padding: 5.5rem 1.2rem 4.5rem;
+  }
+
+  .letter-parchment-sheet {
+    padding: 2.4rem 1.8rem;
+  }
+
+  .letter-wax-seal {
+    top: -14px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .letter-highlight-moment {
+    padding: 1.2rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .letter-parchment-sheet {
+    padding: 2rem 1.2rem;
+    border-radius: 16px;
+  }
+
+  .postscript-note-wrapper {
+    padding: 1.3rem 1.2rem;
+  }
+
+  .next-thing-btn {
+    padding: 0.95rem 2rem;
+    font-size: 1rem;
+  }
+}

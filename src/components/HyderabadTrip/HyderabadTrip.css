@@ -1,0 +1,980 @@
+/* ==========================================================================
+   Hyderabad Trip Section Styles
+   Cinematic, Adventurous, Polaroid Travel Journal
+   ========================================================================== */
+
+.hyderabad-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 1.5rem 5rem;
+  background: linear-gradient(180deg, rgba(3, 7, 18, 0.6) 0%, rgba(2, 6, 20, 0.92) 100%);
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Ambient Deep Lighting */
+.hyderabad-ambient-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgba(29, 78, 216, 0.22) 0%,
+    rgba(14, 30, 80, 0.15) 50%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hyderabad-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(147, 197, 253, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.hyderabad-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1020px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+/* ==========================================================================
+   1. Section Header
+   ========================================================================== */
+.hyderabad-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.chapter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.15rem;
+  border-radius: 9999px;
+  background: rgba(15, 30, 75, 0.6);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  backdrop-filter: blur(12px);
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #bae6fd;
+  box-shadow: 0 4px 18px rgba(8, 20, 50, 0.4);
+}
+
+.chapter-icon {
+  font-size: 0.8rem;
+  color: #93c5fd;
+}
+
+.chapter-subline {
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  font-weight: 300;
+  color: #93c5fd;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.hyderabad-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 6.2vw, 3.8rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 30%, #bae6fd 70%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(96, 165, 250, 0.35);
+  margin: 0;
+}
+
+.car-emoji {
+  display: inline-block;
+  -webkit-text-fill-color: initial;
+  filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.6));
+}
+
+.trip-three-lines {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  font-weight: 400;
+  color: #e0f2fe;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dot-sep {
+  color: #60a5fa;
+  font-size: 0.7rem;
+}
+
+.glow-text {
+  color: #bae6fd;
+  font-weight: 500;
+  text-shadow: 0 0 10px rgba(147, 197, 253, 0.6);
+}
+
+/* ==========================================================================
+   2. Road & Traveling Car Animation
+   ========================================================================== */
+.road-animation-wrapper {
+  width: 100%;
+  max-width: 860px;
+  margin-top: -0.5rem;
+}
+
+.road-container {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.road-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.road-marker {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  z-index: 3;
+}
+
+.start-marker {
+  left: 2%;
+}
+
+.dest-marker {
+  right: 2%;
+}
+
+.marker-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #60a5fa;
+  box-shadow: 0 0 12px #60a5fa;
+  border: 2px solid #ffffff;
+}
+
+.dest-pin {
+  font-size: 1.6rem;
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.8));
+  animation: pinBounce 2s ease-in-out infinite alternate;
+}
+
+@keyframes pinBounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
+
+.pin-pulse {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(96, 165, 250, 0.3);
+  animation: pinPulseRing 2.4s ease-out infinite;
+}
+
+@keyframes pinPulseRing {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.marker-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #93c5fd;
+}
+
+.dest-name {
+  color: #bae6fd;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(147, 197, 253, 0.6);
+}
+
+.travelling-car {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  z-index: 4;
+}
+
+.car-symbol {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 12px rgba(96, 165, 250, 0.9));
+}
+
+.car-speed-dust {
+  font-size: 0.9rem;
+  margin-left: -4px;
+  opacity: 0.7;
+}
+
+.car-glow-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.4), transparent 70%);
+}
+
+/* ==========================================================================
+   3. Destination Card & Skyline
+   ========================================================================== */
+.destination-card {
+  width: 100%;
+  max-width: 780px;
+  background: linear-gradient(135deg, rgba(15, 30, 75, 0.5) 0%, rgba(8, 18, 48, 0.65) 100%);
+  border: 1px solid rgba(147, 197, 253, 0.28);
+  border-radius: 24px;
+  padding: 2.2rem 2rem;
+  text-align: center;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 12px 35px rgba(2, 6, 20, 0.6), inset 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+.destination-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.skyline-decor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.charminar-silhouette {
+  font-size: 1.6rem;
+  letter-spacing: 0.4rem;
+  filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.5));
+}
+
+.decor-star {
+  color: #93c5fd;
+  font-size: 0.8rem;
+}
+
+.dest-welcome-heading {
+  font-family: var(--font-script);
+  font-size: clamp(2.4rem, 6.5vw, 3.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff, #bae6fd, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  text-shadow: 0 0 25px rgba(96, 165, 250, 0.4);
+}
+
+.dest-story-lead {
+  font-size: clamp(1rem, 2.3vw, 1.25rem);
+  font-weight: 300;
+  color: #e0f2fe;
+  line-height: 1.5;
+  max-width: 620px;
+  margin: 0;
+}
+
+.dest-story-punch {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.6vw, 1.45rem);
+  color: #93c5fd;
+  margin: 0;
+}
+
+/* ==========================================================================
+   4. Interactive Trip Timeline Tabs
+   ========================================================================== */
+.trip-timeline-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  background: rgba(10, 22, 55, 0.6);
+  padding: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(147, 197, 253, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+.timeline-tab-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  color: #93c5fd;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.25s ease;
+  z-index: 1;
+}
+
+.timeline-tab-btn:hover {
+  color: #ffffff;
+}
+
+.tab-active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.tab-glow-pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.6), rgba(59, 130, 246, 0.35));
+  border: 1px solid rgba(186, 230, 253, 0.4);
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.4);
+  z-index: -1;
+}
+
+/* ==========================================================================
+   5. Polaroid Photo Memory Grid
+   ========================================================================== */
+.photos-grid-wrapper {
+  width: 100%;
+}
+
+.polaroid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  justify-items: center;
+}
+
+.polaroid-card {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+  background: #ffffff;
+  padding: 0.75rem 0.75rem 1.4rem;
+  border-radius: 6px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 15px rgba(96, 165, 250, 0.2);
+  cursor: pointer;
+  transition: box-shadow 0.35s ease;
+  transform-origin: center center;
+  display: flex;
+  flex-direction: column;
+}
+
+.polaroid-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+.photo-media-box {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-color: #0b1938;
+}
+
+.photo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+.fallback-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.placeholder-cam {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+.placeholder-tag {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #bae6fd;
+}
+
+.placeholder-hint {
+  font-size: 0.7rem;
+  color: #93c5fd;
+  opacity: 0.8;
+}
+
+.polaroid-caption-box {
+  margin-top: 0.85rem;
+  text-align: center;
+  padding: 0 0.25rem;
+  width: 100%;
+}
+
+.polaroid-caption-text {
+  font-family: var(--font-script);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* ==========================================================================
+   6. Featured Centerpiece Memory Card
+   ========================================================================== */
+.featured-memory-section {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  justify-content: center;
+}
+
+.featured-card {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(18, 38, 90, 0.55), rgba(9, 20, 52, 0.7));
+  border: 1px solid rgba(186, 230, 253, 0.38);
+  border-radius: 24px;
+  padding: 2rem 1.8rem;
+  text-align: center;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 16px 45px rgba(2, 6, 20, 0.7), 0 0 30px rgba(59, 130, 246, 0.3);
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(2, 6, 20, 0.8), 0 0 45px rgba(96, 165, 250, 0.45);
+}
+
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 9999px;
+  background: rgba(37, 99, 235, 0.3);
+  border: 1px solid rgba(147, 197, 253, 0.4);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #bae6fd;
+  margin-bottom: 1.25rem;
+}
+
+.badge-star {
+  color: #60a5fa;
+}
+
+.featured-media {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  background: #0b1938;
+}
+
+.featured-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  display: block;
+}
+
+.featured-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #ffffff;
+}
+
+.featured-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 12px rgba(147, 197, 253, 0.8));
+}
+
+.featured-sub {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #bae6fd;
+}
+
+.featured-view-hint {
+  font-size: 0.8rem;
+  color: #93c5fd;
+  opacity: 0.85;
+}
+
+.featured-story-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  line-height: 1.5;
+  color: #e0f2fe;
+  margin: 0;
+  text-shadow: 0 0 15px rgba(147, 197, 253, 0.3);
+}
+
+/* ==========================================================================
+   7. Funny Trip Chaos Section
+   ========================================================================== */
+.funny-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.funny-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.funny-emoji-badge {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+}
+
+.funny-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.funny-subtitle {
+  font-size: 0.95rem;
+  color: #93c5fd;
+  font-style: italic;
+  margin: 0;
+}
+
+.funny-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.8rem;
+  width: 100%;
+  max-width: 820px;
+  justify-items: center;
+}
+
+.funny-card {
+  position: relative;
+  width: 100%;
+  max-width: 240px;
+  background: #ffffff;
+  padding: 0.7rem 0.7rem 1.2rem;
+  border-radius: 6px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.funny-media {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #0b1938;
+}
+
+.funny-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  display: block;
+}
+
+.funny-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  color: #ffffff;
+}
+
+.funny-sticker {
+  font-size: 2.4rem;
+}
+
+.funny-hint {
+  font-size: 0.75rem;
+  color: #93c5fd;
+}
+
+.funny-caption-box {
+  margin-top: 0.7rem;
+  text-align: center;
+}
+
+.funny-caption {
+  font-family: var(--font-script);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* ==========================================================================
+   8. Section Ending
+   ========================================================================== */
+.hyderabad-footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  max-width: 680px;
+  margin-top: 1rem;
+}
+
+.footer-lead {
+  font-size: clamp(1rem, 2.3vw, 1.25rem);
+  font-weight: 300;
+  color: #93c5fd;
+  margin: 0;
+}
+
+.footer-middle {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: #bae6fd;
+  margin: 0;
+}
+
+.footer-climax {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 3.2vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(147, 197, 253, 0.4);
+  margin: 0.4rem 0 1.5rem;
+}
+
+.next-chapter-cue {
+  display: flex;
+  justify-content: center;
+}
+
+.cue-bounce-box {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.cue-msg {
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  color: #93c5fd;
+}
+
+.cue-arrow-icon {
+  font-size: 1.1rem;
+  color: #bae6fd;
+  filter: drop-shadow(0 0 6px #60a5fa);
+}
+
+/* ==========================================================================
+   9. Fullscreen Lightbox Modal
+   ========================================================================== */
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 7, 18, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 720px;
+  width: 100%;
+  background: rgba(15, 30, 75, 0.75);
+  border: 1px solid rgba(186, 230, 253, 0.4);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(59, 130, 246, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.lightbox-close-btn:hover {
+  background: rgba(239, 68, 68, 0.8);
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(10, 25, 65, 0.7);
+  border: 1px solid rgba(186, 230, 253, 0.4);
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+.lightbox-nav-btn:hover {
+  background: rgba(37, 99, 235, 0.9);
+  scale: 1.1;
+}
+
+.prev-btn { left: 14px; }
+.next-btn { right: 14px; }
+
+.lightbox-image-box {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+
+.lightbox-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.lightbox-fallback-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+}
+
+.lightbox-fallback-icon {
+  font-size: 4rem;
+  filter: drop-shadow(0 0 15px rgba(96, 165, 250, 0.8));
+}
+
+.lightbox-fallback-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #bae6fd;
+}
+
+.lightbox-caption-panel {
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(147, 197, 253, 0.2);
+  background: rgba(8, 18, 48, 0.9);
+}
+
+.lightbox-caption-text {
+  font-family: var(--font-script);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #e0f2fe;
+  margin: 0;
+}
+
+.lightbox-counter {
+  font-size: 0.85rem;
+  color: #93c5fd;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hyderabad-section {
+    padding: 4.5rem 1.2rem 3.5rem;
+  }
+
+  .road-container {
+    height: 90px;
+  }
+
+  .polaroid-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  .polaroid-card {
+    max-width: 100%;
+  }
+
+  .photo-media-box {
+    height: 180px;
+  }
+
+  .featured-media {
+    height: 240px;
+  }
+
+  .funny-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  .lightbox-image-box {
+    height: 280px;
+  }
+
+  .timeline-nav {
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .polaroid-grid {
+    grid-template-columns: 1fr;
+    max-width: 270px;
+  }
+
+  .funny-grid {
+    grid-template-columns: 1fr;
+    max-width: 250px;
+  }
+
+  .destination-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .featured-card {
+    padding: 1.4rem 1rem;
+  }
+
+  .featured-media {
+    height: 210px;
+  }
+}
