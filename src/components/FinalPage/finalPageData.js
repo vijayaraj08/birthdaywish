@@ -4,7 +4,7 @@
 // ==========================================================================
 
 export const BIRTHDAY_CONFIG = {
-  name: 'Her Name', // Change this to her actual name!
+  name: 'Satvikaa', // Change this to her actual name!
   signature: 'Your Friend', // Change this to your name/signature!
   birthdayTag: 'Happy Birthday',
 };
